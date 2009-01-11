@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
-  
+
   def new
   end
 
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     flash[:notice] = "You have been logged out."
     redirect_back_or_default(root_path)
   end
-  
+
   def open_id_authentication
     authenticate_with_open_id do |result, identity_url|
       if result.successful? && self.current_user = User.find_by_identity_url(identity_url)
@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
   end
 
   protected
-  
+
   def password_authentication
     user = User.authenticate(params[:login], params[:password])
     if user
@@ -45,7 +45,7 @@ class SessionsController < ApplicationController
       render :action => :new
     end
   end
-  
+
   def successful_login
     new_cookie_flag = (params[:remember_me] == "1")
     handle_remember_cookie! new_cookie_flag

@@ -11,7 +11,7 @@ class PasswordMailer < ActionMailer::Base
   end
 
   protected
-  
+
   def setup_email(user)
     @recipients = "#{user.email}"
     @from = APP_CONFIG[:admin_email]
