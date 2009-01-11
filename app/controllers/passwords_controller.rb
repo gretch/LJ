@@ -29,7 +29,7 @@ class PasswordsController < ApplicationController
     @user = Password.find_by_reset_code(params[:reset_code]).user
 
     if @user.update_attributes(params[:user])
-      flash[:notice] = 'Password was successfully updated.'
+      flash[:success] = 'Password was successfully updated.'
       redirect_to login_path
     else
       flash[:notice] = 'EPIC FAIL!'
@@ -41,7 +41,7 @@ class PasswordsController < ApplicationController
     @password = Password.find(params[:id])
 
     if @password.update_attributes(params[:password])
-      flash[:notice] = 'Password was successfully updated.'
+      flash[:success] = 'Password was successfully updated.'
       redirect_to(@password)
     else
       render :action => :edit
