@@ -6,7 +6,7 @@
     <legend>Your Details</legend>
     <ol>
       <li>
-        <%= f.label :login, 'Username' %>
+        <%= f.label :login, t('user.login') %>
         <%= f.text_field :login %>
       </li>
       <li>
@@ -18,7 +18,7 @@
         <%= f.password_field :password %>
       </li>
       <li>
-        <%= f.label :password_confirmation, 'Confirm Password' %>
+        <%= f.label :password_confirmation, t('user.password_confirmation') %>
         <%= f.password_field :password_confirmation %>
       </li>
     </ol>

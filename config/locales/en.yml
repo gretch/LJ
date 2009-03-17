@@ -1,0 +1,4 @@
+en:
+  user:
+    login: Username
+    password_confirmation: Confirm Password
