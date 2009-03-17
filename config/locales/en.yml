@@ -1,4 +1,11 @@
 en:
+  formtastic:
+    required: Required
+
   user:
     login: Username
     password_confirmation: Confirm Password
+
+  users:
+    new:
+      sign_up: Sign Up

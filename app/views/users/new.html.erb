@@ -1,38 +1,26 @@
 <% @user.password = @user.password_confirmation = nil %>
-<%= title "Signup", :h2 %>
-<% form_for @user do |f| %>
-  <%= f.error_messages %>
-  <fieldset>
-    <legend>Your Details</legend>
+<%= title t('users.new.sign_up'), :h2 %>
+
+<% semantic_form_for @user do |f| %>
+
+  <% f.inputs :name => 'Your Details' do %>
+    <%= f.input :login, :label => t('user.login') %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation, :label => t('user.password_confirmation') %>
+  <% end %>
+
+  <% f.inputs :name => 'Signup with OpenID' do %>
     <ol>
-      <li>
-        <%= f.label :login, t('user.login') %>
-        <%= f.text_field :login %>
-      </li>
-      <li>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-      </li>
-      <li>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </li>
-      <li>
-        <%= f.label :password_confirmation, t('user.password_confirmation') %>
-        <%= f.password_field :password_confirmation %>
-      </li>
-    </ol>
-  </fieldset>
-  <fieldset>
-    <legend>Signup with OpenID</legend>
-    <ol>
-      <li>
+      <li class="string">
         <label for="openid_url">OpenID URL</label>
         <%= text_field_tag :openid_url, params[:openid_url] || params['openid.identity'] %>
       </li>
     </ol>
-  </fieldset>
-  <div class="buttons">
-    <%= submit_tag 'Sign up' %>
-  </div>
+  <% end %>
+
+  <% f.buttons do %>
+    <%= f.commit_button t('users.new.sign_up') %>
+  <% end %>
+
 <% end %>
