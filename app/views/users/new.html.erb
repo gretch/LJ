@@ -1,5 +1,5 @@
 <% @user.password = @user.password_confirmation = nil %>
-<%= title t('users.new.sign_up'), :h2 %>
+<%= title t('.sign_up'), :h2 %>
 
 <% semantic_form_for @user do |f| %>
 
@@ -20,7 +20,7 @@
   <% end %>
 
   <% f.buttons do %>
-    <%= f.commit_button t('users.new.sign_up') %>
+    <%= f.commit_button t('.sign_up') %>
   <% end %>
 
 <% end %>
