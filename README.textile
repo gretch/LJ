@@ -55,9 +55,11 @@ Packages up your css/javascript so you're not sending 143 files down to the user
 load times and saves you bandwidth.
 
 h3. Compass
+
 Use the best CSS frameworks and reduce CSS hell. Oh, as a bonus, Haml is ready to use as well.
 
 h3. Formtastic
+
 Do forms smartly.
 
 h2. Routes
