@@ -1,6 +1,22 @@
 @import base.sass
 @import formtastic_changes.sass
 
+table.index
+  td
+    &.action
+      +span(1)
+      :text-align center
+    &.money
+      +span(3)
+      :text-align right
+
+table.show
+  tr.even th
+    :background = !blueprint_table_stripe_color
+  th
+    +span(5)
+
+
 // Flash Messages
 div
   #flash-notice
