@@ -14,6 +14,7 @@ en:
   updated: "{{name}} was successfully updated."
 
 
+  # User.
   user:
     login: Username
     password_confirmation: Confirm Password
@@ -21,3 +22,4 @@ en:
   users:
     new:
       sign_up: Sign Up
+
