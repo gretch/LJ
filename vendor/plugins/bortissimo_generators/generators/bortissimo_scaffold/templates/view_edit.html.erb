@@ -1,0 +1,6 @@
+<%%= title(t('.title'), :h2) %>
+
+<%%= render :partial => 'form' %>
+
+<%%= link_to t(:show), @<%= singular_name %> %> |
+<%%= link_to t(:back), <%= plural_name %>_path %>

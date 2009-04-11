@@ -62,6 +62,12 @@ h3. Formtastic
 
 Do forms smartly.
 
+h2. Scaffold Generators
+
+bortissimo_scaffold generator will take care of formtastic, rspec and other project specific stuffs.
+Watch for translation file generated on config/locale for you to append into config/locale/en.yml.
+(Will try to make it auto append in the future).
+
 h2. Routes
 
 The routes for RESful Auth and the forgot password stuff are already sorted for you.

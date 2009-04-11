@@ -1,0 +1,13 @@
+<%%= title(@<%= singular_name %>.try(:name), :h2) %>
+
+<table class="show">
+<% for attribute in attributes -%>
+  <tr class="<%= cycle('odd', 'even') %>">
+    <th><%%=t '<%= singular_name %>.<%= attribute.name %>' %></th>
+    <td><%%=h @<%= singular_name %>.<%= attribute.name %> %></td>
+  </tr>
+<% end -%>
+</table>
+
+<%%= link_to t(:edit), edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
+<%%= link_to t(:back), <%= plural_name %>_path %>

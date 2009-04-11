@@ -1,0 +1,12 @@
+# Copy the contents to config/locale/en.yml and then delete this file.
+
+  # <%= singular_name.humanize %>.
+  <%= singular_name %>:
+    <%= singular_name %>: <%= singular_name.humanize %>
+
+  <%= plural_name %>:
+    new: New <%= singular_name.humanize %>
+    index:
+      title: Listing <%= singular_name.humanize %>
+    edit:
+      title: Editing <%= singular_name.humanize %>
