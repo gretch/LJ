@@ -2,6 +2,18 @@ en:
   formtastic:
     required: Required
 
+
+  # Texts.
+  actions: Actions
+  show: Show
+  edit: Edit
+  destroy: Destroy
+  back: Back
+  confirm: Are you sure?
+  created: "{{name}} was successfully created."
+  updated: "{{name}} was successfully updated."
+
+
   user:
     login: Username
     password_confirmation: Confirm Password
