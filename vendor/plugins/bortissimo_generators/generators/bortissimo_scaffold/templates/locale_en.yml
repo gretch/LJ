@@ -3,6 +3,9 @@
   # <%= singular_name.humanize %>.
   <%= singular_name %>:
     <%= singular_name %>: <%= singular_name.humanize %>
+  <%- for attribute in attributes -%>
+    <%= attribute.name %>: <%= attribute.column.human_name %>
+  <%- end -%>
 
   <%= plural_name %>:
     new: New <%= singular_name.humanize %>
