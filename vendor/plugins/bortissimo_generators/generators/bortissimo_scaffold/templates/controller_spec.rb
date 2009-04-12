@@ -15,7 +15,7 @@ describe <%= controller_class_name %>Controller do
   describe "GET index" do
 
     it "exposes all <%= table_name.pluralize %> as @<%= table_name.pluralize %>" do
-      <%= class_name %>.should_receive(:find).with(:all).and_return([mock_<%= file_name %>])
+      <%= class_name %>.should_receive(:paginate).and_return([mock_<%= file_name %>])
       get :index
       assigns[:<%= table_name %>].should == [mock_<%= file_name %>]
     end
@@ -23,7 +23,7 @@ describe <%= controller_class_name %>Controller do
     describe "with mime type of xml" do
 
       it "renders all <%= table_name.pluralize %> as xml" do
-        <%= class_name %>.should_receive(:find).with(:all).and_return(<%= file_name.pluralize %> = mock("Array of <%= class_name.pluralize %>"))
+        <%= class_name %>.should_receive(:paginate).and_return(<%= file_name.pluralize %> = mock("Array of <%= class_name.pluralize %>"))
         <%= file_name.pluralize %>.should_receive(:to_xml).and_return("generated XML")
         get :index, :format => 'xml'
         response.body.should == "generated XML"

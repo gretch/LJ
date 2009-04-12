@@ -86,7 +86,7 @@ class BortissimoScaffoldGenerator < Rails::Generator::NamedBase
       # View specs
       m.template "rspec_scaffold:edit_erb_spec.rb",
         File.join('spec/views', controller_class_path, controller_file_name, "edit.#{default_file_extension}_spec.rb")
-      m.template "rspec_scaffold:index_erb_spec.rb",
+      m.template "bortissimo_scaffold:index_erb_spec.rb",
         File.join('spec/views', controller_class_path, controller_file_name, "index.#{default_file_extension}_spec.rb")
       m.template "rspec_scaffold:new_erb_spec.rb",
         File.join('spec/views', controller_class_path, controller_file_name, "new.#{default_file_extension}_spec.rb")
