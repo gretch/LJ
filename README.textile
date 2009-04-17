@@ -45,6 +45,7 @@ You should be testing your code, so Bort comes with Rspec and Rspec-rails alread
 ready to roll.
 
 h3. factory_girl
+
 Because fixtures are painful.
 
 h3. Exception Notifier
