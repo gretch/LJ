@@ -44,6 +44,9 @@ h3. Rspec & Rspec-rails
 You should be testing your code, so Bort comes with Rspec and Rspec-rails already installed so you're
 ready to roll.
 
+h3. factory_girl
+Because fixtures are painful.
+
 h3. Exception Notifier
 
 You don't want your applications to crash and burn so Exception Notifier is already installed to let 

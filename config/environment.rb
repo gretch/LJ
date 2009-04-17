@@ -34,6 +34,7 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', :version => '2.3.6', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem 'rspec', :lib => false, :version => '>= 1.2.0'
   config.gem 'rspec-rails', :lib => false, :version => '>= 1.2.0'
+  config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com'
   
   # These cause problems with irb. Left in for reference
   # config.gem 'rspec-rails', :lib => 'spec/rails', :version => '1.1.11'
