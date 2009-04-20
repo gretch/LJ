@@ -1,23 +1,21 @@
-!http://clients.fudgestudios.com/chester.jpg!
+h1. Bortissimo
 
-h1. Bort
+Bortissimo is a base Rails 2.3 application that makes creating new projects easier and faster. Bortissimo is derived from "Bort":http://github.com/fudgestudios/bort/tree and is developed and maintained by "Hendy Tanata":http://codeftw.blogspot.com/
 
-Bort is a base Rails 2.3 application that makes creating new projects easier and faster. Bort is developed and maintained by "Fudge Studios":http://www.fudgestudios.com, "Jim Neath":http://jimneath.org and "Matt Hall":http://matthall.wordpress.com
-
-If you have any suggestions for improvements then feel free to leave a request on "User Voice":http://bort.uservoice.com
+Bortissimo adds bortissimo_scaffold, compass, formtastic and factory_girl to Bort to make things even easier, but only if you like those plugins.
 
 h2. Install
 
-* Download and unzip Bort
+* Download and unzip Bortissimo
 * Edit the database.yml and the settings.yml files
-* Changed the default password in the bort migration
+* Changed the default password in the bortissimo migration
 * Edit the REST_AUTH_SITE_KEY in each of the environment files
 * Rake db:migrate
 * Have a brew and celebrate
 
 h2. Plugins Installed
 
-Bort comes with a few commonly used plugins installed and already setup.
+Bortissimo comes with a few commonly used plugins installed and already setup.
 
 h3. RESTful Authentication
 
@@ -28,21 +26,21 @@ The AASM plugin comes pre-installed. RESTful Authentication is also setup to use
 
 h3. User Roles
 
-Bort now comes with "Role Requirement":http://code.google.com/p/rolerequirement/ by Tim Harper. A default 
+Bortissimo now comes with "Role Requirement":http://code.google.com/p/rolerequirement/ by Tim Harper. A default
 admin role is predefined along with a default admin user. See the migrations for the admin login details.
 
 h3. Open ID Authentication
 
-Bort, as of 0.3, has Open ID integrated with RESTful Authentication. Rejoice!
+Bortissimo, as of 0.3, has Open ID integrated with RESTful Authentication. Rejoice!
 
 h3. Will Paginate
 
-We use will_paginate in pretty much every project we use, so Bort comes with it pre-installed.
+We use will_paginate in pretty much every project we use, so Bortissimo comes with it pre-installed.
 
 h3. Rspec & Rspec-rails
 
-You should be testing your code, so Bort comes with Rspec and Rspec-rails already installed so you're
-ready to roll.
+You should be testing your code, so Bortissimo comes with Rspec and Rspec-rails already installed so you're
+ready to roll, plus the bortissimo_scaffold to generate your scaffolds.
 
 h3. factory_girl
 
@@ -64,7 +62,7 @@ Use the best CSS frameworks and reduce CSS hell. Oh, as a bonus, Haml is ready t
 
 h3. Formtastic
 
-Do forms smartly.
+Do forms smartly and semantically.
 
 h2. Scaffold Generators
 
@@ -88,7 +86,7 @@ over easily.
 
 h2. Capistrano Recipe
 
-Bort comes ready to rock capistrano. The recipe that is setup is based on using git and passenger. It's ready
+Bortissimo comes ready to rock capistrano. The recipe that is setup is based on using git and passenger. It's ready
 to go with multistage deployments. It deploys to the production config by default, so if you don't need it
 you can ignore it. Just update config/deploy/production.rb with your deployment settings.
 
@@ -96,7 +94,7 @@ More info on capistrano-ext/multistage deployments can be found here: http://web
 
 h2. Uses the Database for Sessions
 
-Bort is setup to use the database to store sessions by default. 
+Bortissimo is setup to use the database to store sessions by default.
 
 h2. Misc 
 
@@ -110,4 +108,5 @@ h2. Misc
 
 h2. Credits
 
+Bortissimo is developed and maintained by "Hendy Tanata":http://codeftw.blogspot.com/
 Bort put together by people at "Fudge":http://www.fudgestudios.com/ 
