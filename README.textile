@@ -108,5 +108,5 @@ h2. Misc
 
 h2. Credits
 
-Bortissimo is developed and maintained by "Hendy Tanata":http://codeftw.blogspot.com/
+Bortissimo is developed and maintained by "Hendy Tanata":http://codeftw.blogspot.com/  
 Bort put together by people at "Fudge":http://www.fudgestudios.com/ 
