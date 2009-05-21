@@ -84,7 +84,7 @@ class BortissimoScaffoldGenerator < RspecScaffoldGenerator
   include ActionView::Helpers::TextHelper
     # Override with your own usage banner.
     def banner
-      "Usage: #{$0} rspec_scaffold ModelName [field:type field:type]"
+      "Usage: #{$0} bortissimo_scaffold ModelName [field:type field:type]"
     end
 
     def scaffold_views
