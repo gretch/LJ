@@ -2,7 +2,8 @@ class <%= controller_class_name %>Controller < ApplicationController
   # GET /<%= table_name %>
   # GET /<%= table_name %>.xml
   def index
-    @<%= table_name %> = <%= class_name %>.paginate(:page => params[:page])
+    @search = <%= class_name %>.new_search(params[:search])
+    @<%= table_name %> = @search.all
 
     respond_to do |format|
       format.html # index.html.erb

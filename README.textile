@@ -2,7 +2,7 @@ h1. Bortissimo
 
 Bortissimo is a base Rails 2.3 application that makes creating new projects easier and faster. Bortissimo is derived from "Bort":http://github.com/fudgestudios/bort/tree and is developed and maintained by "Hendy Tanata":http://codeftw.blogspot.com/
 
-Bortissimo adds bortissimo_scaffold, compass, formtastic and factory_girl to Bort to make things even easier, but only if you like those plugins.
+Bortissimo adds bortissimo_scaffold, compass, formtastic, factory_girl and Searchlogic to Bort to make things even easier, but only if you like those plugins.
 
 h2. Install
 
@@ -55,6 +55,10 @@ h3. Asset Packager
 
 Packages up your css/javascript so you're not sending 143 files down to the user at the same time. Reduces
 load times and saves you bandwidth.
+
+h3. Searchlogic
+
+Object based ActiveRecord searching, paginating, ordering, and more!
 
 h3. Compass
 
