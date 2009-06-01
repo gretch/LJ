@@ -3,7 +3,7 @@
 <table class="show">
 <% for attribute in attributes -%>
   <tr class="<%= cycle('odd', 'even') %>">
-    <th><%%=t '<%= singular_name %>.<%= attribute.name %>' %></th>
+    <th><%%= <%= class_name %>.human_attribute_name('<%= attribute.name %>') %></th>
     <td><%%=h @<%= singular_name %>.<%= attribute.name %> %></td>
   </tr>
 <% end -%>

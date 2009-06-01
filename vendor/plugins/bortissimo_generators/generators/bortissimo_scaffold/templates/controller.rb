@@ -45,7 +45,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
     respond_to do |format|
       if @<%= file_name %>.save
-        flash[:success] = t(:created, :name => t('<%= singular_name %>.<%= singular_name %>'))
+        flash[:success] = t(:created, :name => <%= class_name %>.human_name)
         format.html { redirect_to(@<%= file_name %>) }
         format.xml  { render :xml => @<%= file_name %>, :status => :created, :location => @<%= file_name %> }
       else
@@ -62,7 +62,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
     respond_to do |format|
       if @<%= file_name %>.update_attributes(params[:<%= file_name %>])
-        flash[:success] = t(:updated, :name => t('<%= singular_name %>.<%= singular_name %>'))
+        flash[:success] = t(:updated, :name => <%= class_name %>.human_name)
         format.html { redirect_to(@<%= file_name %>) }
         format.xml  { head :ok }
       else
