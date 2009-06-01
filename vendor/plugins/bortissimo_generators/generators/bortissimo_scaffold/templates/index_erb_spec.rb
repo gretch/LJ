@@ -17,6 +17,7 @@ describe "/<%= table_name %>/index.<%= default_file_extension %>" do
 <% end -%>
     ]
     assigns[:<%= table_name %>].stub!(:total_pages).and_return(1)
+    assigns[:search] = <%= class_name %>.new_search
   end
 
   it "renders a list of <%= table_name %>" do
