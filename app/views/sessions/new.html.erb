@@ -4,7 +4,7 @@
     <legend>Your Details</legend>
     <ol>
       <li>
-        <%= label_tag 'login', t('user.login') %>
+        <%= label_tag 'login', User.human_attribute_name('login') %>
         <%= text_field_tag 'login', @login %>
       </li>
       <li>
