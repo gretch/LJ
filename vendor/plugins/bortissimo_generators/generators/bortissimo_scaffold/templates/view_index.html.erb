@@ -12,7 +12,7 @@
 
   <tbody>
   <%% @<%= plural_name %>.each do |<%= singular_name %>| %>
-    <tr>
+    <tr class="<%%= cycle('odd', 'even') %>">
     <%- for attribute in attributes -%>
       <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
     <%- end -%>
