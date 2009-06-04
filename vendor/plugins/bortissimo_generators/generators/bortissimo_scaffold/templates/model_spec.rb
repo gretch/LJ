@@ -6,6 +6,6 @@ describe <%= class_name %> do
   end
 
   it 'should create a new instance given valid attributes' do
-    @<%= singular_name %>.save.should be_true
+    violated "#{@<%= singular_name %>.errors.full_messages.to_sentence}" if @<%= singular_name %>.save == false
   end
 end
