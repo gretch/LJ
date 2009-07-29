@@ -31,7 +31,7 @@ Rails::Initializer.run do |config|
   config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com', :version => '2.0.2'
   config.gem 'chriseppstein-compass', :lib => 'compass', :source => 'http://gems.github.com'
   config.gem "justinfrench-formtastic", :lib => 'formtastic', :source  => 'http://gems.github.com', :version => '>= 0.1.4'
-  config.gem 'mislav-will_paginate', :version => '2.3.6', :lib => 'will_paginate', :source => 'http://gems.github.com'
+  config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem 'rspec', :lib => false, :version => '>= 1.2.0'
   config.gem 'rspec-rails', :lib => false, :version => '>= 1.2.0'
   config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com'
