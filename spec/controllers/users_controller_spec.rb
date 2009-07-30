@@ -1,8 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe UsersController do
-  fixtures :users
-
   it 'allows signup' do
     lambda do
       create_user
@@ -56,12 +54,13 @@ describe UsersController do
   
   
   it 'activates user' do
+    aaron = Factory.create(:aaron)
     User.authenticate('aaron', 'monkey').should be_nil
-    get :activate, :activation_code => users(:aaron).activation_code
+    get :activate, :activation_code => aaron.activation_code
     response.should redirect_to('/login')
     flash[:notice].should_not be_nil
     flash[:error ].should     be_nil
-    User.authenticate('aaron', 'monkey').should == users(:aaron)
+    User.authenticate('aaron', 'monkey').should == aaron
   end
   
   it 'does not activate user without key' do
@@ -83,8 +82,7 @@ describe UsersController do
   end
   
   def create_user(options = {})
-    post :create, :user => { :login => 'quire', :email => 'quire@example.com',
-      :password => 'quire69', :password_confirmation => 'quire69' }.merge(options)
+    post :create, :user => Factory.attributes_for(:user).merge(options)
   end
 end
 

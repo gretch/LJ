@@ -6,7 +6,9 @@ require File.dirname(__FILE__) + '/../spec_helper'
 include AuthenticatedTestHelper
 
 describe User do
-  fixtures :users
+  before(:each) do
+    @quentin = Factory.create(:quentin)
+  end
 
   describe 'being created' do
     before do
@@ -146,13 +148,13 @@ describe User do
   end
 
   it 'resets password' do
-    users(:quentin).update_attributes(:password => 'new password', :password_confirmation => 'new password')
-    User.authenticate('quentin', 'new password').should == users(:quentin)
+    @quentin.update_attributes(:password => 'new password', :password_confirmation => 'new password')
+    User.authenticate('quentin', 'new password').should == @quentin
   end
 
   it 'does not rehash password' do
-    users(:quentin).update_attributes(:login => 'quentin2')
-    User.authenticate('quentin2', 'monkey').should == users(:quentin)
+    @quentin.update_attributes(:login => 'quentin2')
+    User.authenticate('quentin2', 'monkey').should == @quentin
   end
 
   #
@@ -160,7 +162,7 @@ describe User do
   #
 
   it 'authenticates user' do
-    User.authenticate('quentin', 'monkey').should == users(:quentin)
+    User.authenticate('quentin', 'monkey').should == @quentin
   end
 
   it "doesn't authenticate user with bad password" do
@@ -170,10 +172,12 @@ describe User do
  if REST_AUTH_SITE_KEY.blank?
    # old-school passwords
    it "authenticates a user against a hard-coded old-style password" do
-     User.authenticate('old_password_holder', 'test').should == users(:old_password_holder)
+     old_password_holder = Factory.create(:old_password_holder)
+     User.authenticate('old_password_holder', 'test').should == old_password_holder
    end
  else
    it "doesn't authenticate a user against a hard-coded old-style password" do
+     Factory.create(:old_password_holder)
      User.authenticate('old_password_holder', 'test').should be_nil
    end
 
@@ -192,42 +196,42 @@ describe User do
   #
 
   it 'sets remember token' do
-    users(:quentin).remember_me
-    users(:quentin).remember_token.should_not be_nil
-    users(:quentin).remember_token_expires_at.should_not be_nil
+    @quentin.remember_me
+    @quentin.remember_token.should_not be_nil
+    @quentin.remember_token_expires_at.should_not be_nil
   end
 
   it 'unsets remember token' do
-    users(:quentin).remember_me
-    users(:quentin).remember_token.should_not be_nil
-    users(:quentin).forget_me
-    users(:quentin).remember_token.should be_nil
+    @quentin.remember_me
+    @quentin.remember_token.should_not be_nil
+    @quentin.forget_me
+    @quentin.remember_token.should be_nil
   end
 
   it 'remembers me for one week' do
     before = 1.week.from_now.utc
-    users(:quentin).remember_me_for 1.week
+    @quentin.remember_me_for 1.week
     after = 1.week.from_now.utc
-    users(:quentin).remember_token.should_not be_nil
-    users(:quentin).remember_token_expires_at.should_not be_nil
-    users(:quentin).remember_token_expires_at.between?(before, after).should be_true
+    @quentin.remember_token.should_not be_nil
+    @quentin.remember_token_expires_at.should_not be_nil
+    @quentin.remember_token_expires_at.between?(before, after).should be_true
   end
 
   it 'remembers me until one week' do
     time = 1.week.from_now.utc
-    users(:quentin).remember_me_until time
-    users(:quentin).remember_token.should_not be_nil
-    users(:quentin).remember_token_expires_at.should_not be_nil
-    users(:quentin).remember_token_expires_at.should == time
+    @quentin.remember_me_until time
+    @quentin.remember_token.should_not be_nil
+    @quentin.remember_token_expires_at.should_not be_nil
+    @quentin.remember_token_expires_at.should == time
   end
 
   it 'remembers me default two weeks' do
     before = 2.weeks.from_now.utc
-    users(:quentin).remember_me
+    @quentin.remember_me
     after = 2.weeks.from_now.utc
-    users(:quentin).remember_token.should_not be_nil
-    users(:quentin).remember_token_expires_at.should_not be_nil
-    users(:quentin).remember_token_expires_at.between?(before, after).should be_true
+    @quentin.remember_token.should_not be_nil
+    @quentin.remember_token_expires_at.should_not be_nil
+    @quentin.remember_token_expires_at.between?(before, after).should be_true
   end
 
   it 'registers passive user' do
@@ -239,27 +243,25 @@ describe User do
   end
 
   it 'suspends user' do
-    users(:quentin).suspend!
-    users(:quentin).should be_suspended
+    @quentin.suspend!
+    @quentin.should be_suspended
   end
 
   it 'does not authenticate suspended user' do
-    users(:quentin).suspend!
-    User.authenticate('quentin', 'monkey').should_not == users(:quentin)
+    @quentin.suspend!
+    User.authenticate('quentin', 'monkey').should_not == @quentin
   end
 
   it 'deletes user' do
-    users(:quentin).deleted_at.should be_nil
-    users(:quentin).delete!
-    users(:quentin).deleted_at.should_not be_nil
-    users(:quentin).should be_deleted
+    @quentin.deleted_at.should be_nil
+    @quentin.delete!
+    @quentin.deleted_at.should_not be_nil
+    @quentin.should be_deleted
   end
 
   describe "being unsuspended" do
-    fixtures :users
-
     before do
-      @user = users(:quentin)
+      @user = @quentin
       @user.suspend!
     end
 
@@ -283,7 +285,7 @@ describe User do
 
 protected
   def create_user(options = {})
-    record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69' }.merge(options))
+    record = Factory.build(:user, options)
     record.register! if record.valid?
     record
   end
