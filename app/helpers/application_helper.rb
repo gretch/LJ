@@ -18,4 +18,8 @@ module ApplicationHelper
     messages
   end
 
+  # Generate CSS class name for row striping.
+  def stripe_cycle
+    cycle('odd', 'even')
+  end
 end

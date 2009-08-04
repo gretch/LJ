@@ -12,7 +12,7 @@
 
   <tbody>
   <%% @<%= plural_name %>.each do |<%= singular_name %>| %>
-    <tr class="<%%= cycle('odd', 'even') %>">
+    <tr class="<%%= stripe_cycle %>">
     <%- for attribute in attributes -%>
       <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
     <%- end -%>
