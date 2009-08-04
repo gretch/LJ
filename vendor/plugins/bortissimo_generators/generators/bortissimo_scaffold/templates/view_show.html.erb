@@ -2,10 +2,7 @@
 
 <table class="show">
 <% for attribute in attributes -%>
-  <tr class="<%%= stripe_cycle %>">
-    <th><%%= <%= class_name %>.human_attribute_name('<%= attribute.name %>') %></th>
-    <td><%%=h @<%= singular_name %>.<%= attribute.name %> %></td>
-  </tr>
+  <%%= show_row(@<%= singular_name %>, :<%= attribute.name %>) %>
 <% end -%>
 </table>
 

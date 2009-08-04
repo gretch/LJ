@@ -22,4 +22,13 @@ module ApplicationHelper
   def stripe_cycle
     cycle('odd', 'even')
   end
+
+  # Generate rows for table in "show" views.
+  def show_row(object, method_name)
+    content_tag(:tr,
+        content_tag(:th, object.class.human_attribute_name(method_name.to_s)) +
+        content_tag(:td, h(object.send(method_name))),
+      :class => stripe_cycle
+    )
+  end
 end
