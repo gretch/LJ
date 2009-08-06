@@ -13,7 +13,8 @@
 
 # <%= singular_name.humanize %>.
   <%= plural_name %>:
-    new: New <%= singular_name.humanize %>
+    new:
+      title: New <%= singular_name.humanize %>
     index:
       title: Listing <%= singular_name.humanize %>
     edit:
