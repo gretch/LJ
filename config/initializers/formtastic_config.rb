@@ -29,7 +29,7 @@ Formtastic::SemanticFormBuilder.label_str_method = :titleize
 # for the text inside each @<option>@ tag or alongside each radio @<input>@.  The first method
 # that is found on the object will be used.
 # Defaults to ["to_label", "display_name", "full_name", "name", "title", "username", "login", "value", "to_s"]
-Formtastic::SemanticFormBuilder.collection_label_methods = ['title_and_author', 'display_name', 'login', 'to_s']
+Formtastic::SemanticFormBuilder.collection_label_methods = ['display_name', 'name', 'to_s']
 
 # Formtastic by default renders inside li tags the input, hints and then
 # errors messages. Sometimes you want the hints to be rendered first than
