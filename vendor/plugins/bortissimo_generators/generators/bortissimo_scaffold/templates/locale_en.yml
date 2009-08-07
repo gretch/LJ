@@ -11,7 +11,7 @@
       <%- end -%>
 
 
-# <%= singular_name.humanize %>.
+  # <%= singular_name.humanize %>.
   <%= plural_name %>:
     new:
       title: New <%= singular_name.humanize %>
