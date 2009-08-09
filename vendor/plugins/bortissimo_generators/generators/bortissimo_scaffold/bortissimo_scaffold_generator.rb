@@ -22,7 +22,7 @@ class BortissimoScaffoldGenerator < RspecScaffoldGenerator
       m.directory File.join('spec/views', controller_class_path, controller_file_name)
 
       # Controller spec, class, and helper.
-      m.template 'rspec_scaffold:routing_spec.rb',
+      m.template 'bortissimo_scaffold:routing_spec.rb',
         File.join('spec/routing', controller_class_path, "#{controller_file_name}_routing_spec.rb")
 
       m.template 'bortissimo_scaffold:controller_spec.rb',
@@ -31,7 +31,7 @@ class BortissimoScaffoldGenerator < RspecScaffoldGenerator
       m.template "bortissimo_scaffold:controller.rb",
         File.join('app/controllers', controller_class_path, "#{controller_file_name}_controller.rb")
 
-      m.template 'rspec_scaffold:helper_spec.rb',
+      m.template 'bortissimo_scaffold:helper_spec.rb',
         File.join('spec/helpers', class_path, "#{controller_file_name}_helper_spec.rb")
 
       m.template "scaffold:helper.rb",
