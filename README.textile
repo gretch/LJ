@@ -1,14 +1,14 @@
 !http://clients.fudgestudios.com/chester.jpg!
 
-h1. Bort
+h1. LJ
 
-Bort is a base Rails 2.2 application that makes creating new projects easier and faster. Bort is developed and maintained by "Fudge Studios":http://www.fudgestudios.com, "Jim Neath":http://jimneath.org and "Matt Hall":http://matthall.wordpress.com
+LJ is a base Rails application for ... that ... LJ is developed and maintained by GG
 
-If you have any suggestions for improvements then feel free to leave a request on "User Voice":http://bort.uservoice.com
+If you have any suggestions for improvements then feel free to leave a request.
 
 h2. Install
 
-* Download and unzip Bort
+* Download and unzip LJ
 * Edit the database.yml and the settings.yml files
 * Changed the default password in the bort migration
 * Edit the REST_AUTH_SITE_KEY in each of the environment files
@@ -17,7 +17,7 @@ h2. Install
 
 h2. Plugins Installed
 
-Bort comes with a few commonly used plugins installed and already setup.
+LJ comes with a few commonly used plugins installed and already setup.
 
 h3. RESTful Authentication
 
@@ -28,20 +28,20 @@ The AASM plugin comes pre-installed. RESTful Authentication is also setup to use
 
 h3. User Roles
 
-Bort now comes with "Role Requirement":http://code.google.com/p/rolerequirement/ by Tim Harper. A default 
+LJ now comes with "Role Requirement":http://code.google.com/p/rolerequirement/ by Tim Harper. A default 
 admin role is predefined along with a default admin user. See the migrations for the admin login details.
 
 h3. Open ID Authentication
 
-Bort, as of 0.3, has Open ID integrated with RESTful Authentication. Rejoice!
+LJ, as of 0.3, has Open ID integrated with RESTful Authentication. Rejoice!
 
 h3. Will Paginate
 
-We use will_paginate in pretty much every project we use, so Bort comes with it pre-installed.
+We use will_paginate in pretty much every project we use, so LJ comes with it pre-installed.
 
 h3. Rspec & Rspec-rails
 
-You should be testing your code, so Bort comes with Rspec and Rspec-rails already installed so you're
+You should be testing your code, so LJ comes with Rspec and Rspec-rails already installed so you're
 ready to roll.
 
 h3. Exception Notifier
@@ -70,7 +70,7 @@ over easily.
 
 h2. Capistrano Recipe
 
-Bort comes ready to rock capistrano. The recipe that is setup is based on using git and passenger. It's ready
+LJ comes ready to rock capistrano. The recipe that is setup is based on using git and passenger. It's ready
 to go with multistage deployments. It deploys to the production config by default, so if you don't need it
 you can ignore it. Just update config/deploy/production.rb with your deployment settings.
 
@@ -78,7 +78,7 @@ More info on capistrano-ext/multistage deployments can be found here: http://web
 
 h2. Uses the Database for Sessions
 
-Bort is setup to use the database to store sessions by default. 
+LJ is setup to use the database to store sessions by default. 
 
 h2. Misc 
 
@@ -92,4 +92,4 @@ h2. Misc
 
 h2. Credits
 
-Bort put together by people at "Fudge":http://www.fudgestudios.com/ 
+LJ is using Bort put together by people at "Fudge":http://www.fudgestudios.com/ 
